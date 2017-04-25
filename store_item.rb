@@ -10,28 +10,28 @@ class Store
   attr_reader :name, :color, :scent, :active
   attr_writer 
 
-  def initialize (imput_name, input_color, input_scent)
-    @name = imput_name
-    @color = input_color
-    @scent = input_scent
-    @active = active
+  def initialize(input_options)
+    @name = input_options[:name]
+    @color = input_options[:color]
+    @scent = input_options[:scent]
+    @active = input_options[:active]
   end
 
-  def name
-    @name
-  end
+  # #def name
+  #  # @name
+  # end
 
-  def color
-    @color
-  end
+  # def color
+  #   @color
+  # end
 
-  def scent
-    @scent
-  end 
+  # def scent
+  #   @scent
+  # end 
 
-  def active
-    @active
-  end
+  # def active
+  #   @active
+  # end
 
 
   def print_info
@@ -39,19 +39,20 @@ class Store
   end
 end
 
-soap = Soap.new ({name: "irish spring",
+soap = Store.new(
+  name: "irish spring",
                   color: "white", 
                   scent: "fresh", 
                   active: true
-                  })
+                  )
 
-veg = Veg.new ({name: "broccoli",
+veg = Store.new ({name: "broccoli",
                   color: "green", 
                   scent: "earthy", 
                   active: true
                   })
 
-fruit = Fruit.new ({name: "berry",
+fruit = Store.new ({name: "berry",
                   color: "red", 
                   scent: "sweet", 
                   active: true
